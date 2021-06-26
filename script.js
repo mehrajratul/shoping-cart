@@ -13,6 +13,7 @@ btnAdd.addEventListener('click', () => {
     total.innerText = subTotal.innerText;
 });
 btnSubtract.addEventListener('click', () => {
+    if(input.value > 0){
     input.value = parseInt(input.value) - 1;
     let addPhonePrice = document.getElementById('addPhonePrice');
     let NegPrice = -(-1219);
@@ -20,6 +21,7 @@ btnSubtract.addEventListener('click', () => {
     subTotal.innerText = parseFloat(addPhonePrice.innerText) + parseFloat(addCasePrice.innerText);
     let total = document.getElementById('total');
     total.innerText = subTotal.innerText;
+    }
 });
 
 
@@ -37,10 +39,12 @@ btnAddCase.addEventListener('click', () => {
     total.innerText = subTotal.innerText;
 });
 btnSubtractCase.addEventListener('click', () => {
+    if(caseInput.value > 0){
     caseInput.value = parseInt(caseInput.value) - 1;
     const negCasePrice = -(-59);
     addCasePrice.innerText = negCasePrice * caseInput.value;
     subTotal.innerText = parseFloat(addCasePrice.innerText) + parseFloat(addPhonePrice.innerText);
     let total = document.getElementById('total');
     total.innerText = subTotal.innerText;
+    }
 });
